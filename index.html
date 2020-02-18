@@ -354,7 +354,11 @@
       //Number of days ahead of the due date the user wants to start working on the assignment.
       var days;
 
-
+      for(var i = dueDate; i >= dueDate-days; i--) {
+          //Function call to add a study assingment to the calendar.
+          //Parameters are the time for that session and the date.
+          addStudySession(estTime/days, i);
+      }
   //retrieve data about Assignment
   //decide where to put it
   //from due date, work backwards, and add blocks backwards based on
