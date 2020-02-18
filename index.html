@@ -252,7 +252,7 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="addAssignment.html">Add Assignment</a></li>
+          <li><a href="#add-assignment">Add Assignment</a></li>
           <li><a href="#export">Export</a></li>
         </ul>
       </div>
@@ -293,8 +293,38 @@
     </div>
   </div>
 
+  <div class="form container-fluid bg-grey" id="add-assignment">
+    <h2 class="text-center">Enter the assignment information:</h2>
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <input class="form-control" id="title" name="title" placeholder="Title" type="text" required>
+      </div>
+      <div class="col-sm-6 form-group">
+        <input class="form-control" id="course" name="course" placeholder="Course" type="email" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <input class="form-control" id="duedate" name="duedate" placeholder="Due Date" type="text" required>
+      </div>
+      <div class="col-sm-6 form-group">
+        <input class="form-control" id="type" name="type" placeholder="Assignment Type" type="email" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 form-group">
+        <button class="btn btn-default pull-right" type="submit">Enter</button>
+      </div>
+    </div>
+
+  </div>
+
 
   <script>
+  //retrieve data about Assignment
+  //decide where to put it
+  //from due date, work backwards, and add blocks backwards based on
+  //createElement and put it where it's supposed to be
   </script>
 
 </body>
