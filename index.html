@@ -10,6 +10,10 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
     body {
@@ -298,18 +302,34 @@
     <h2 class="text-center">Enter the assignment information:</h2>
     <div class="row">
       <div class="col-sm-6 form-group">
+        <label for="title">Assignment Title:</label>
         <input class="form-control" id="title" name="title" placeholder="Title" type="text" required>
       </div>
       <div class="col-sm-6 form-group">
-        <input class="form-control" id="course" name="course" placeholder="Course" type="email" required>
+        <label for="course">Course:</label>
+        <input class="form-control" id="course" name="course" placeholder="Course" type="text" required>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-6 form-group">
-        <input class="form-control" id="duedate" name="duedate" placeholder="Due Date" type="text" required>
+        <!-- change to date picker-->
+        <label for="date">Due Date:</label>
+        <input class="form-control" type="date" id="date" placeholder="Due Date">
       </div>
       <div class="col-sm-6 form-group">
-        <input class="form-control" id="type" name="type" placeholder="Assignment Type" type="email" required>
+        <label for="type">Assignment Type:</label>
+        <input class="form-control" id="type" name="type" placeholder="Assignment Type" type="text" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <!-- change to date picker-->
+        <label for="time">Estimated Total Time (in hours):</label>
+        <input class="form-control" type="text" id="time" placeholder="Time">
+      </div>
+      <div class="col-sm-6 form-group">
+        <label for="days">How many days in advance will you start working on this assignment?:</label>
+        <input class="form-control" id="days" name="days" placeholder="How many days?" type="text" required>
       </div>
     </div>
     <div class="row">
@@ -322,6 +342,7 @@
 
 
   <script>
+
   //retrieve data about Assignment
   //decide where to put it
   //from due date, work backwards, and add blocks backwards based on
