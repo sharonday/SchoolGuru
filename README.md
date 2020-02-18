@@ -51,7 +51,7 @@
 
 
 ## Q & A  
-
+    Two sections: one to help possible developers use our code and one to help the website users. 
 
 ## Document Intentions
     The purpose of this document is to help students effectively organize their time so they can complete all of their tasks. Instead of being forced to pull an all nighter for a big midterm, the planner will break up the study times throughout the week. After we have submitted our final version of the document, we have hopes that students in the future can help build onto this program to make it the best version of our idea possible.
