@@ -247,50 +247,42 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#myPage">HW Planner</a>
+        <a class="navbar-brand" href="index.html">HW Planner</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="addAssignment.html">Add Assignment</a></li>
-          <li><a href="#export">Export</a></li>
+          <li><a href="">Adding Assignment</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- calendar -->
-  <div class="calendar row container-fluid">
-    <div class="col-sm-2 day" id="sunday">
-      <h2>Sunday</h2>
-      <div class="list">
+  <!-- Container (Contact Section) -->
+  <div id="contact" class="container-fluid bg-grey">
+    <h2 class="text-center">Enter the assignment information:</h2>
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <input class="form-control" id="title" name="title" placeholder="Title" type="text" required>
+      </div>
+      <div class="col-sm-6 form-group">
+        <input class="form-control" id="course" name="course" placeholder="Course" type="email" required>
       </div>
     </div>
-    <div class="col-sm-2 day" id="monday">
-      <h2>Monday</h2>
-      <div class="list">
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <input class="form-control" id="duedate" name="duedate" placeholder="Due Date" type="text" required>
+      </div>
+      <div class="col-sm-6 form-group">
+        <input class="form-control" id="type" name="type" placeholder="Assignment Type" type="email" required>
       </div>
     </div>
-    <div class="col-sm-2 day" id="tuesday">
-      <h2>Tuesday</h2>
-      <div class="list">
-      </div>
-    </div>
-    <div class="col-sm-2 day" id="wednesday">
-      <h2>Wednesday</h2>
-      <div class="list">
-      </div>
-    </div>
-    <div class="col-sm-2 day" id="thursday">
-      <h2>Thursday</h2>
-      <div class="list">
-      </div>
-    </div>
-    <div class="col-sm-2 day" id="friday">
-      <h2>Friday</h2>
-      <div class="list">
+    <div class="row">
+      <div class="col-sm-12 form-group">
+        <button class="btn btn-default pull-right" type="submit">Enter</button>
       </div>
     </div>
   </div>
+
 
 
   <script>
