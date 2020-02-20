@@ -1,57 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
+  <!-- Theme Made By www.w3schools.com -->
+  <title>SchoolGuru Guidelines</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheets">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+    }
 
-  <title>School Guru</title>
+    h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
 
+    .jumbotron {
+      background-image: url("masada.JPG");
+      background-color: #1ebff4;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+      min-height: 100%;
+      height: 1200px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .list {
+      padding: 20px;
+      border-style: solid;
+      border-weight: 10px;
+      min-height: 500px;
+    }
+
+    .container-fluid {
+      padding: 60px 50px;
+    }
+
+    .bg-grey {
+      background-color: #f6f6f6;
+    }
+
+    .logo-small {
+      color: #1ebff4;
+      font-size: 50px;
+    }
+
+    .logo {
+      color: #1ebff4;
+      font-size: 200px;
+    }
+
+      }
+
+      .left-column {
+	width: 50%;
+	float: left;
+}
+ 
+      .right-column {
+	width: 50%;
+	float: right;
+}
+      
+    .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+    }
+
+    .thumbnail a>img {
+      height: 300px !important;
+    }
+
+    .thumbnail img {
+      width: 400px;
+      height: 300px;
+      margin-bottom: 10px;
+    }
+
+    .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+    }
+
+    .item span {
+      font-style: normal;
+    }
+
+    .panel {
+      border: 1px solid #1ebff4;
+      border-radius: 0 !important;
+      transition: box-shadow 0.5s;
+    }
+
+    .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
+    }
+
+    .panel-footer .btn:hover {
+      border: 1px solid #1ebff4;
+      background-color: #fff !important;
+      color: #1ebff4;
+    }
+
+    .panel-heading {
+      color: #fff !important;
+      background-color: #1ebff4 !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+
+    .panel-footer {
+      background-color: white !important;
+    }
+
+    .panel-footer h3 {
+      font-size: 32px;
+    }
+
+    .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #1ebff4;
+      color: #fff;
+    }
+
+    .navbar {
+      margin-bottom: 0;
+      background-color: #1ebff4;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+    }
+
+    .navbar li a,
+    .navbar .navbar-brand {
+      color: #fff !important;
+    }
+
+    .navbar-nav li a:hover,
+    .navbar-nav li.active a {
+      color: #1ebff4 !important;
+      background-color: #fff !important;
+    }
+
+    .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+    }
+
+    footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #1ebff4;
+    }
+
+    .slideanim {
+      visibility: hidden;
+    }
+
+    .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+    }
+
+    @keyframes slide {
+      0% {
+        opacity: 0;
+        transform: translateY(70%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+
+    @-webkit-keyframes slide {
+      0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+      }
+
+      100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+
+      .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        font-size: 150px;
+      }
+    }
+  </style>
 </head>
-
-<body id="page-top">
-
-  <!-- Navigation. This section is good to go.  Make sure that the sections you add for each of the buttons matches with the href name.  For example, when creating the week view section, name the id "WeekView" exactly as it appears next to href in the naviagation button.-->
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <!-- nav bar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Start SchoolGuru</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#About">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#Help">Help</a>
-          </li>
-
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Start SchoolGuru</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#About">About</a></li>
+          <li><a href="#FAQ">FAQ</a></li>
+          <li><a href="#Contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
+</body>
+    
+<body id="page-top">
 
+  <!-- Navigation. This section is good to go.  Make sure that the sections you add for each of the buttons matches with the href name.  For example, when creating the week view section, name the id "WeekView" exactly as it appears next to href in the naviagation button.-->
 
 
 
     <!-- Masthead -->
   <header class="text-black text-center">
-    <div class="container d-flex align-items-center flex-column">
-
+    <div class="form container-fluid bg-grey" id="add-assignment">
       <!-- Masthead Avatar Image -->
       <img class="masthead-avatar mb-5" src="images/heroimage.jpg" alt="Smart looking things">
-
       <!-- Masthead Heading -->
-      <h1 class="masthead-heading text-uppercase mb-0">Welcome to SchoolGuru Guidelines</h1>
-
+      <h1 class="masthead-heading text-uppercase mb-0"><br><br>Welcome to SchoolGuru Guidelines</h1>
       <!-- Icon Divider -->
       <div class="divider-custom divider-light">
         <div class="divider-custom-line"></div>
@@ -60,10 +299,8 @@
         </div>
         <div class="divider-custom-line"></div>
       </div>
-
       <!-- Masthead Subheading -->
-      <p class="masthead-subheading font-weight-light mb-0">Use SchoolGuru to stay on top of your study periods<br><br><br></p>
-
+      <h4><br>Use SchoolGuru to stay on top of your study periods<br><br><br></h4>
     </div>
   </header>
 
@@ -71,37 +308,41 @@
 
 
 <!-- About Section -->
-<section class="page-section bg-secondary text-white mb-0" id="About">
+<section class="page-section bg-secondary text-black mb-0" id="About">
     <div class="container">
-
     <!--About Section Heading-->
-     <h1 class="page-section-heading text-center text-uppercase text-white"><br><br><br>About<br><br><br></h1>
-      <img src="successfulstudent.jpg" alt="Successful college student" class="center-large-image" alt="successful college student" style="width:100%;height:100%;">
-
-    <h4><br><br>The SchoolGuru website helps student figure out when to study for the many assignments that they have planned over the next week. <br><br>  Use the add assignment button to input assignments, tests, readings, ect. <br><br>  Then with the given information about the tasks, the site will prioritize when you should work on each task throughout the week. <br><br> You can then export the week view of work to an external source for later reference.  <br><br> Note: You must put in all known assignments, as you cannot recall data from a previous session on this site.<br><br><br></h4>
+    <img src="successfulstudent.jpg" alt="Successful college student" class="center-large-image" alt="successful college student" style="width:100%;height:100%;">
+    <h1 class="page-section-heading text-center text-uppercase text-white"><br><br><br>About</h1>
+    <h4>The SchoolGuru website helps student figure out when to study for the many assignments that they have planned over the next week. <br>  Use the add assignment button to input assignments, tests, readings, ect. <br>  Then with the given information about the tasks, the site will prioritize when you should work on each task throughout the week. <br> You can then export the week view of work to an external source for later reference.  <br> Note: You must put in all known assignments, as you cannot recall data from a previous session on this site.<br><br></h4>
     </div>
-    </section>
+</section>
 
 
 
-    <!--Week View Section-- This should look like a table with Sunday through Monday at the top of each column.  Once the assignments are added, they will appear in this section.-->
-<section class="page-section bg-primary text-white mb-0" id="Help">
+<!--FAQ Section-->
+<section class="form container-fluid bg-grey" id="FAQ">
     <div class="container">
+     <h1 class="page-section-heading text-center text-uppercase text-white"><br><br><br>Frequently Asked Questions<br></h1>
+    <h4><br>Q1. What can SchoolGuru improve my study efficiency?<br>Q2. How many assignments can I add to SchoolGuru?<br>Q3. How can we use SchoolGuru efficiently?<br>Q4. What should we know before we use it?<br>Q5. What should I do if I want to delete an assignment?<br>Q6. What can I do for email reminding?<br></h4>
+    </div>
+</section>
 
-    <!--WeekView Section Heading-->
-     <h1 class="page-section-heading text-center text-uppercase text-white"><br><br><br>Frequently Asked Questions<br><br><br></h1>
-    <h2><br>This is where the assignments will appear once they have been added from the add assignment button<br><br><br></h2>
-
-
-
-
-
-    <!--Add Assignment Section-- This section just needs a button and brief description of what to do once you click on it.-->
-
-
-    <!--Export Section-- This just needs a button to export the week view into either a printable text document, or an email generator-->
-
-
+  
+<!--Contact Section-->    
+<section class="form container-fluid text-black" id="Contact">
+    <div class="container">
+        <h1 class="page-section-heading text-center text-uppercase text-white"><br>Let's Get In Touch!<br></h1>
+        <div class="row">
+            <div class="col-sm-6 left-column text-center">
+              <h4>+1 (123) 456-7890</h2>
+            </div>
+            <div class="col-sm-6 right-column text-center">
+              <a class="h4" href="mailto:xxx@pitt.edu">xxx@pitt.edu</a>
+            </div>
+        </div>
+    </div>
+</section>
+    
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.slim.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
