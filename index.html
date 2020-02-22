@@ -35,7 +35,6 @@
       line-height: 1.375em;
       color: #303030;
       font-weight: 400;
-      margin-bottom: 30px;
     }
 
     .jumbotron {
@@ -266,34 +265,34 @@
 
   <!-- calendar -->
   <div class="calendar row container-fluid text-center">
-    <div class="col-sm-2 day" id="sunday">
+    <div class="col-sm-2 day">
       <h2>Sunday</h2>
-      <div class="list">
+      <div class="list" id="sunday">
       </div>
     </div>
-    <div class="col-sm-2 day" id="monday">
+    <div class="col-sm-2 day">
       <h2>Monday</h2>
-      <div class="list">
+      <div class="list" id="monday">
       </div>
     </div>
-    <div class="col-sm-2 day" id="tuesday">
+    <div class="col-sm-2 day">
       <h2>Tuesday</h2>
-      <div class="list">
+      <div class="list" id="tuesday">
       </div>
     </div>
-    <div class="col-sm-2 day" id="wednesday">
+    <div class="col-sm-2 day">
       <h2>Wednesday</h2>
-      <div class="list">
+      <div class="list" id="wednesday">
       </div>
     </div>
-    <div class="col-sm-2 day" id="thursday">
+    <div class="col-sm-2 day">
       <h2>Thursday</h2>
-      <div class="list">
+      <div class="list" id="thursday">
       </div>
     </div>
-    <div class="col-sm-2 day" id="friday">
+    <div class="col-sm-2 day">
       <h2>Friday</h2>
-      <div class="list">
+      <div class="list" id="friday">
       </div>
     </div>
   </div>
@@ -302,29 +301,19 @@
     <h2 class="text-center">Enter the assignment information:</h2>
     <div class="row">
       <div class="col-sm-6 form-group">
-        <label for="title">Assignment Title:</label>
-        <input class="form-control" id="title" name="title" placeholder="Title" type="text" required>
+        <label for="title">Assignment:</label>
+        <input class="form-control" id="title" name="title" placeholder="What is the assignment?" type="text" required>
       </div>
-      <div class="col-sm-6 form-group">
-        <label for="course">Course:</label>
-        <input class="form-control" id="course" name="course" placeholder="Course" type="text" required>
-      </div>
-    </div>
-    <div class="row">
       <div class="col-sm-6 form-group">
         <!-- change to date picker-->
         <label for="date">Due Date:</label>
-        <input class="form-control" type="date" id="date" placeholder="Due Date">
-      </div>
-      <div class="col-sm-6 form-group">
-        <label for="type">Assignment Type:</label>
-        <input class="form-control" id="type" name="type" placeholder="Assignment Type" type="text" required>
+        <input class="form-control" type="date" id="date">
       </div>
     </div>
     <div class="row">
       <div class="col-sm-6 form-group">
         <label for="time">Estimated Total Time (in hours):</label>
-        <input class="form-control" type="text" id="time" placeholder="Time">
+        <input class="form-control" type="text" id="time" placeholder="How long do you think you'll need to complete the assignment?">
       </div>
       <div class="col-sm-6 form-group">
         <label for="days">How many days in advance will you start working on this assignment?:</label>
@@ -333,7 +322,7 @@
     </div>
     <div class="row">
       <div class="col-sm-12 form-group">
-        <button class="btn btn-default pull-right" type="submit">Enter</button>
+        <button class="btn btn-default pull-right" id="submit" type="submit">Enter</button>
       </div>
     </div>
 
@@ -341,28 +330,67 @@
 
 
   <script>
-      //Title of the assignment
-      var title;
-      //Course title
-      var course;
-      //Assignment due date
-      var dueDate;
-      //Assingment category (i.e. exam, reading assginemnt, project)
-      var type;
-      //Estimated time that it will take to complete the assignment
-      var estTime;
-      //Number of days ahead of the due date the user wants to start working on the assignment.
-      var days;
+    document.getElementById("submit").addEventListener("click", createAssignment);
 
-      for(var i = dueDate; i >= dueDate - days; i--) {
-          //Function call to add a study assingment to the calendar.
-          //Parameters are the time for that session and the date.
-          addStudySession(estTime/days, i);
+    function createAssignment() {
+      //Title of the assignment
+      var title = document.getElementById("title").value;
+      //Assignment due date
+      var dueDate = new Date(document.getElementById("date").value);
+      //Estimated time that it will take to complete the assignment
+      var estTime = document.getElementById("time").value;
+      //Number of days ahead of the due date the user wants to start working on the assignment.
+      var days = document.getElementById("days").value;
+
+      for (var i = dueDate; i >= dueDate - days; i--) {
+        //create text
+        var node = document.createElement("h4");
+        var text = document.createTextNode(title);
+        node.appendChild(text);
+
+        var dayWeek = (dueDate.getDay() - i) % 6; //fix wrap around
+        var target;
+        switch (dayWeek) {
+          case 0:
+            target = "sunday";
+            break;
+          case 1:
+            target = "monday";
+            break;
+          case 2:
+            target = "tuesday";
+            break;
+          case 3:
+            target = "wednesday";
+            break;
+          case 4:
+            target = "thursday";
+            break;
+          case 5:
+            target = "friday";
+            break;
+          default:
+            target = "friday";
+            break;
+        }
+        document.getElementById(target).appendChild(node);
+
+        //session length = estTime/days
+        //put on date i
+        //create text
+        var nodeT = document.createElement("p");
+        var timetext = (estTime * 60) / days;
+        var textT = document.createTextNode("\nfor " + timetext + " minutes");
+        node.appendChild(textT);
+        document.getElementById(target).appendChild(nodeT);
+
       }
-  //retrieve data about Assignment
-  //decide where to put it
-  //from due date, work backwards, and add blocks backwards based on
-  //createElement and put it where it's supposed to be
+    }
+
+    //retrieve data about Assignment
+    //decide where to put it
+    //from due date, work backwards, and add blocks backwards based on
+    //createElement and put it where it's supposed to be
   </script>
 
 </body>
