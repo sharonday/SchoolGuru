@@ -340,48 +340,66 @@
       //Number of days ahead of the due date the user wants to start working on the assignment.
       var days = document.getElementById("days").value;
 
-      for (var i = dueDate; i >= dueDate - days; i--) {
-        //create text
-        var node = document.createElement("h4");
-        var text = document.createTextNode(title);
-        node.appendChild(text);
+      // Determine current date
+      var today = new Date();
+      // Determine how far away the due date is from today
+      var daysAway = Math.floor(dueDate.getTime() / 86400000) - Math.floor(today.getTime() / 86400000);
 
-        var dayWeek = (dueDate.getDay() - i) % 6; //fix math
-        var target;
-        switch (dayWeek) {
-          case 0:
-            target = "sunday";
-            break;
-          case 1:
-            target = "monday";
-            break;
-          case 2:
-            target = "tuesday";
-            break;
-          case 3:
-            target = "wednesday";
-            break;
-          case 4:
-            target = "thursday";
-            break;
-          case 5:
-            target = "friday";
-            break;
-          default:
-            target = "friday";
-            break;
+      if (daysAway >= 0) { //If date has already passed, do not allow anything to be added
+
+        // If the user wanted to start working further in advance than possible, reset days to max number of days
+        if (days > daysAway) {
+          days = daysAway;
         }
-        document.getElementById(target).appendChild(node);
 
-        //session length = estTime/days
-        //put on date i
-        //create text
-        var nodeT = document.createElement("p");
-        var timetext = (estTime * 60) / days;
-        var textT = document.createTextNode("\nfor " + timetext + " minutes");
-        node.appendChild(textT);
-        document.getElementById(target).appendChild(nodeT);
+        for (var i = daysAway; i > daysAway - days; i--) {
+
+          //if current pass through loop is not within current week, do not add it to planner
+          if (i < 6 && i >= today.getDay()) {
+
+            //create text
+            var node = document.createElement("h4");
+            var text = document.createTextNode(title);
+            node.appendChild(text);
+
+            var target;
+            switch (i) {
+              case 0:
+                target = "sunday";
+                break;
+              case 1:
+                target = "monday";
+                break;
+              case 2:
+                target = "tuesday";
+                break;
+              case 3:
+                target = "wednesday";
+                break;
+              case 4:
+                target = "thursday";
+                break;
+              case 5:
+                target = "friday";
+                break;
+              default: // 6 is not a possible value
+                break;
+            }
+            document.getElementById(target).appendChild(node);
+
+            //session length = estTime/days
+            //put on date i
+            //create text
+            var nodeT = document.createElement("p");
+            var timetext = (estTime * 60) / days;
+            var textT = document.createTextNode("\nfor " + timetext.toFixed(0) + " minutes");
+            node.appendChild(textT);
+            document.getElementById(target).appendChild(nodeT);
+          }
+        }
+
       }
+
     }
 
   </script>
