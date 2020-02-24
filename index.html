@@ -322,6 +322,8 @@
 
 
   <script>
+
+
     document.getElementById("submit").addEventListener("click", createAssignment);
 
     function createAssignment() {
@@ -393,6 +395,17 @@
         }
 
       }
+
+      // Clear form of data entered
+      //Title of the assignment
+      var title = document.getElementById("title").reset();
+      //Assignment due date
+      var dueDate = document.getElementById("date").reset();
+      //Estimated time that it will take to complete the assignment
+      var estTime = document.getElementById("time").reset();
+      //Number of days ahead of the due date the user wants to start working on the assignment.
+      var days = document.getElementById("days").reset();
+
 
     }
 
