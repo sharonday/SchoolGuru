@@ -387,7 +387,7 @@
             //create text
             var nodeT = document.createElement("p");
             var timetext = (estTime * 60) / days;
-            var textT = document.createTextNode("\nfor " + timetext.toFixed(0) + " minutes");
+            var textT = document.createTextNode("for " + timetext.toFixed(0) + " minutes");
             node.appendChild(textT);
             document.getElementById(target).appendChild(nodeT);
           }
